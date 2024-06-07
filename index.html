@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurnGame</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js"></script>
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="./src/scenes/welcome.js"></script>
+    <script src="./src/scenes/personagem.js"></script>
+    <script src="./src/scenes/reescolha.js"></script>
+    <!-- quiz -->
+    <script src="./src/scenes/quiz.js"></script>
+    <script src="./src/scenes/quiz2.js"></script>
+    <script src="./src/scenes/quiz3.js"></script>
+    <script src="./src/scenes/quiz4.js"></script>
+    <script src="./src/scenes/quiz5.js"></script>
+    <script src="./src/scenes/quiz6.js"></script>
+    <script src="./src/scenes/quiz7.js"></script>
+    <script src="./src/scenes/quiz8.js"></script>
+    <script src="./src/scenes/quiz9.js"></script>
+    <script src="./src/scenes/quiz10.js"></script>
+    <!-- cenários -->
+    <script src="./src/scenes/trofeus.js"></script>
+    <script src="./src/scenes/cozinha.js"></script>
+    <script src="./src/scenes/lavanderia.js"></script>
+    <script src="./src/scenes/rua.js"></script>
+    <script src="./src/scenes/sala.js"></script>
+    <script src="./src/scenes/churrasqueira.js"></script>
+
+    <script src="./src/scenes/telaFinal.js"></script>
+    <script src="./src/scenes/tutorial.js"></script>
+    <script src="./src/scenes/tutorialBotao.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game"></div>
+
+    <script type="text/javascript">
+        /*Global variables definition*/
+        const config = {
+            type: Phaser.AUTO,
+            scale: {
+                mode: Phaser.Scale.FIT
+            },
+            autoCenter: Phaser.Scale.CENTER,
+            width: window.innerWidth, //largura da tela do jogo
+            height: window.innerHeight, //altura da tela do jogo
+            backgroundColor: '#ffffec',
+            pixelArt: true,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: {
+                        y: 0
+                    },
+                    debug: false,
+                }
+            },
+            parent: "game",
+            dom: {
+                createContainer: true,
+            },
+            scene: [TutorialBotao, Welcome, Personagem, Reescolha, Tutorial, Cozinha, QuizGame, Trofeus, QuizGame2, Lavanderia, QuizGame3, QuizGame4, Sala, Churrasqueira, Rua, QuizGame5, QuizGame6, QuizGame7, QuizGame8, QuizGame9, QuizGame10, TelaFinal]
+        };
+
+        var game = new Phaser.Game(config);
+        game.scene.start('TutorialBotao');
+    </script>
+
+</body>
+
+</html>
